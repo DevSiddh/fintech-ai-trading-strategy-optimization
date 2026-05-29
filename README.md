@@ -16,10 +16,10 @@
 
 | | |
 |---|---|
-| **Live Signal Banner** | **Cumulative Returns vs Buy & Hold** |
-| ![Signal](screenshots/Screenshot%202026-05-30%20002702.png) | ![Returns](screenshots/Screenshot%202026-05-30%20002831.png) |
-| **Model Comparison Radar** | **Feature Importance** |
-| ![Radar](screenshots/Screenshot%202026-05-30%20002935.png) | ![Importance](screenshots/Screenshot%202026-05-30%20003016.png) |
+| **Live Signal Banner** | **Model Comparison Radar** |
+| ![Signal](screenshots/Screenshot%202026-05-30%20002702.png) | ![Radar](screenshots/Screenshot%202026-05-30%20002831.png) |
+| **Feature Importance** | **Cumulative Returns vs Buy & Hold** |
+| ![Importance](screenshots/Screenshot%202026-05-30%20002935.png) | ![Returns](screenshots/Screenshot%202026-05-30%20003016.png) |
 | **Backtest Signals Table** | |
 | ![Signals](screenshots/Screenshot%202026-05-30%20003100.png) | |
 
