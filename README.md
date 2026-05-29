@@ -17,11 +17,11 @@
 | | |
 |---|---|
 | **Live Signal Banner** | **Cumulative Returns vs Buy & Hold** |
-| ![Live Signal](screenshots/live-signal.png) | ![Returns](screenshots/returns.png) |
+| ![Signal](screenshots/Screenshot%202026-05-30%20002702.png) | ![Returns](screenshots/Screenshot%202026-05-30%20002831.png) |
 | **Model Comparison Radar** | **Feature Importance** |
-| ![Radar](screenshots/radar.png) | ![Importance](screenshots/importance.png) |
-
-*To add screenshots: run the app, capture each view, save to `screenshots/` directory, and uncomment the image paths above.*
+| ![Radar](screenshots/Screenshot%202026-05-30%20002935.png) | ![Importance](screenshots/Screenshot%202026-05-30%20003016.png) |
+| **Backtest Signals Table** | |
+| ![Signals](screenshots/Screenshot%202026-05-30%20003100.png) | |
 
 ---
 
