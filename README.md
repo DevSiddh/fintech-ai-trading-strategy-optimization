@@ -478,9 +478,11 @@ The following extensions are identified as high-impact directions for continued 
 
 ## Author
 
-**Yagnesh Devadiga** — sole developer of the entire codebase.
+**Challa Yagnesh Sai Siddhardha** (22NG1A6112) — sole developer of the entire codebase.
 
-This project was completed as an undergraduate capstone. All programming, system architecture design, ML pipeline implementation, dashboard development, and documentation were done independently. Supporting materials (seminar reports, presentation slides) were contributed by team members.
+B.Tech in Artificial Intelligence and Machine Learning, Usha Rama College of Engineering and Technology (Autonomous), JNTUK, 2022–2026.
+
+This project was completed as an undergraduate capstone. All programming, system architecture design, ML pipeline implementation, dashboard development, and documentation were done independently.
 
 ---
 
