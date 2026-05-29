@@ -426,16 +426,40 @@ def run_pipeline(ticker='BTC-USD', start='2018-01-01', window_size=10, test_size
         'lstm_metrics': lstm_metrics,
         'backtest_df': back,
         'backtest_stats': backtest_stats,
-        'chosen_label': chosen_label
-    }
+}
 
 # -----------------------------
-# 8) RUN DEMO when executed directly
+# 8) CLI entry point with argparse
 # -----------------------------
 if __name__ == '__main__':
-    out = run_pipeline(ticker='BTC-USD', start='2018-01-01')
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='Machine Learning-Based Financial Time-Series Forecasting and Strategy Evaluation System'
+    )
+    parser.add_argument('--ticker', type=str, default='BTC-USD',
+                        help='Yahoo Finance ticker symbol (default: BTC-USD)')
+    parser.add_argument('--start', type=str, default='2018-01-01',
+                        help='Training data start date YYYY-MM-DD (default: 2018-01-01)')
+    parser.add_argument('--window', type=int, default=10,
+                        help='LSTM sequence length in days (default: 10)')
+    parser.add_argument('--model', type=str, default='XGBoost',
+                        choices=['XGBoost', 'RandomForest', 'LSTM'],
+                        help='Model to drive the strategy (default: XGBoost)')
+
+    args = parser.parse_args()
+
+    out = run_pipeline(
+        ticker=args.ticker,
+        start=args.start,
+        window_size=args.window,
+        model_choice=args.model
+    )
     print('\nBacktest head:')
     print(out['backtest_df'][['Close','pred','signal','strategy_ret','cum_strategy']].tail())
     print('\nBacktest stats:')
-    print(out['backtest_stats'])
-
+    for k, v in out['backtest_stats'].items():
+        print(f'  {k}: {v}')
+    print(f"\nXGBoost      DA: {out['xgb_metrics']['DA']:.2f}% | RMSE: {out['xgb_metrics']['RMSE']:.6f}")
+    print(f"RandomForest DA: {out['rf_metrics']['DA']:.2f}% | RMSE: {out['rf_metrics']['RMSE']:.6f}")
+    print(f"LSTM         DA: {out['lstm_metrics']['DA']:.2f}% | RMSE: {out['lstm_metrics']['RMSE']:.6f}")

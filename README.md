@@ -12,9 +12,23 @@
 
 ---
 
+## Dashboard Screenshots
+
+| | |
+|---|---|
+| **Live Signal Banner** | **Cumulative Returns vs Buy & Hold** |
+| ![Live Signal](screenshots/live-signal.png) | ![Returns](screenshots/returns.png) |
+| **Model Comparison Radar** | **Feature Importance** |
+| ![Radar](screenshots/radar.png) | ![Importance](screenshots/importance.png) |
+
+*To add screenshots: run the app, capture each view, save to `screenshots/` directory, and uncomment the image paths above.*
+
+---
+
 ## Table of Contents
 
 - [Abstract](#abstract)
+- [Academic Relevance](#academic-relevance)
 - [Research Foundation](#research-foundation)
 - [System Architecture](#system-architecture)
 - [Technical Indicators](#technical-indicators)
@@ -26,9 +40,10 @@
 - [Experimental Results](#experimental-results)
 - [Key Findings & Discussion](#key-findings--discussion)
 - [Future Work](#future-work)
-- [Team & Contributions](#team--contributions)
+- [Author](#author)
+- [Competencies Demonstrated](#competencies-demonstrated)
+- [Relevance to German AI/ML Research](#relevance-to-german-aiml-research)
 - [References](#references)
-- [License](#license)
 
 ---
 
@@ -37,6 +52,25 @@
 Financial markets are inherently noisy, non-stationary, and nonlinear — characteristics that render traditional econometric models inadequate for short-term forecasting. **AlgoTrade AI — MarketPulse Optimizer** addresses this challenge by constructing a supervised learning framework that predicts next-day cryptocurrency returns using eleven hand-engineered technical indicators as input features. Three model architectures — **XGBoost**, **Random Forest**, and **Long Short-Term Memory (LSTM)** — are trained on historical price data, evaluated on a time-preserving holdout set, and deployed through a live signal generator. The system incorporates transaction-cost-aware backtesting with risk-adjusted performance metrics (Sharpe ratio, maximum drawdown, directional accuracy, and win rate), enabling rigorous comparison against a passive buy-and-hold baseline.
 
 This work demonstrates that gradient-boosted tree ensembles (XGBoost) consistently outperform both bagging-based ensembles and recurrent neural architectures on structured tabular market data, achieving directional accuracy exceeding 55% — a statistically meaningful edge over random guessing in high-frequency financial time series.
+
+---
+
+## Academic Relevance
+
+This project integrates concepts from multiple academic disciplines covered in a B.Tech AI & ML curriculum, demonstrating practical application of theoretical coursework:
+
+| Course Area | Application in This Project |
+|-------------|---------------------------|
+| **Machine Learning** | Supervised learning pipeline, ensemble methods (gradient boosting, bagging), hyperparameter optimisation |
+| **Deep Learning** | LSTM architecture design, sequence modelling, EarlyStopping regularisation, tensor preprocessing |
+| **Data Analytics / Data Mining** | Feature engineering from domain knowledge, pattern discovery in financial time series |
+| **Probability & Statistics** | Stationarity reasoning, risk-adjusted metrics (Sharpe ratio), return distributions |
+| **Python Programming** | Modular pipeline design, API development, asynchronous job execution |
+| **Web Technologies** | Flask REST API, Streamlit dashboard, vanilla JavaScript/Plotly.js frontend |
+| **Database Management** | Structured OHLCV data ingestion, pandas DataFrame operations, CSV persistence |
+| **Software Engineering** | Dual-interface architecture, model serialisation, reproducibility through requirements pinning |
+
+For German MSc admissions, this project serves as proof of applied competence across ML, DL, Data Science, Software Engineering, and Research Methodology — areas actively assessed by programmes at TU Munich, University of Tübingen, KIT, Goethe University Frankfurt, and others.
 
 ---
 
@@ -316,7 +350,24 @@ plotly>=5.18.0
 
 ## Usage
 
-### Option 1: Streamlit Dashboard (Recommended for Exploration)
+### Option 1: Command-Line Interface (Quick Reproducibility)
+
+```bash
+python main.py --ticker BTC-USD --start 2018-01-01 --model XGBoost
+```
+
+Runs the full pipeline from the terminal: downloads data, computes indicators, trains all three models, backtests the chosen model, and prints directional accuracy, RMSE, Sharpe ratio, max drawdown, and win rate.
+
+**CLI Arguments:**
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--ticker` | `BTC-USD` | Yahoo Finance ticker symbol |
+| `--start` | `2018-01-01` | Training data start date (YYYY-MM-DD) |
+| `--window` | `10` | LSTM sequence length in days |
+| `--model` | `XGBoost` | Model: `XGBoost`, `RandomForest`, or `LSTM` |
+
+### Option 2: Streamlit Dashboard (Recommended for Exploration)
 
 ```bash
 streamlit run app.py
@@ -330,7 +381,7 @@ Opens an interactive web dashboard at `http://localhost:8501` featuring:
 - **Investment calculator**: Simulate exact profit/loss for any investment amount
 - **CSV export**: Download full backtest results
 
-### Option 2: Flask Web Application (Production)
+### Option 3: Flask Web Application (Production)
 
 ```bash
 python flask_app.py
@@ -348,7 +399,7 @@ Launches a Flask server at `http://127.0.0.1:5000` with a REST API and responsiv
 | `GET` | `/api/job/<job_id>` | Poll pipeline job status |
 | `GET` | `/api/download/<job_id>` | Download backtest CSV |
 
-### Option 3: Direct Python Pipeline
+### Option 4: Direct Python Import
 
 ```python
 from main import run_pipeline
@@ -425,9 +476,15 @@ The following extensions are identified as high-impact directions for continued 
 
 ---
 
-## Competencies Demonstrated
+## Author
 
-This project was developed as a team of four undergraduate students. The work demonstrates applied competence across the following areas — all of which are directly relevant to graduate-level study in Artificial Intelligence and Machine Learning.
+**Yagnesh Devadiga** — sole developer of the entire codebase.
+
+This project was completed as an undergraduate capstone. All programming, system architecture design, ML pipeline implementation, dashboard development, and documentation were done independently. Supporting materials (seminar reports, presentation slides) were contributed by team members.
+
+---
+
+## Competencies Demonstrated
 
 ### Core ML & Data Science
 
