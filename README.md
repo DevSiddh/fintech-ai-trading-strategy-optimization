@@ -1,6 +1,6 @@
-﻿# AlgoTrade AI — MarketPulse Optimizer
+﻿# Machine Learning-Based Financial Time-Series Forecasting and Strategy Evaluation System
 
-**An AI-powered algorithmic trading system for cryptocurrency markets using ensemble machine learning and deep learning.**
+**An end-to-end machine learning system for financial time-series prediction using historical cryptocurrency OHLCV data. The system performs feature engineering with technical indicators, trains and compares XGBoost, Random Forest, and LSTM models, and evaluates predictions using time-preserving validation and backtesting metrics. A Flask/Streamlit dashboard provides live prediction, interactive visualisation, model comparison, and feature-importance analysis.</strong>
 
 ---
 
@@ -9,7 +9,6 @@
 [![XGBoost](https://img.shields.io/badge/XGBoost-2.0-green.svg)](https://xgboost.readthedocs.io)
 [![Flask](https://img.shields.io/badge/Flask-3.0-lightgrey.svg)](https://flask.palletsprojects.com)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.35-red.svg)](https://streamlit.io)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
@@ -468,6 +467,37 @@ This project intersects with several active research areas in German universitie
 
 ---
 
+## Module Mapping for University Applications
+
+This table maps the project to the academic competency areas typically assessed by German MSc admissions committees in AI/ML/Data Science programmes.
+
+| Competency Area | Evidence from This Project |
+|----------------|---------------------------|
+| **Machine Learning** | XGBoost (gradient boosting), Random Forest (bagging ensemble), LSTM (deep recurrent network) — trained, evaluated, and compared with formal metrics |
+| **Data Science** | Feature engineering of 11 technical indicators from domain knowledge; stationarity-aware target design (returns vs. price); MinMax normalisation |
+| **Programming** | Python pipeline (`main.py`), Flask REST backend (`flask_app.py`), Streamlit web dashboard (`app.py`), vanilla JavaScript frontend with Plotly.js |
+| **Data Engineering** | Yahoo Finance API ingestion via `yfinance`, pandas MultiIndex flattening, column filtering, structured supervised dataset construction |
+| **Evaluation & Research Methodology** | Time-preserving train/validation/test split (no look-ahead bias); RMSE, Directional Accuracy, Sharpe ratio, maximum drawdown, win rate; formal backtesting with transaction cost modelling |
+| **Software Engineering** | Dual-interface architecture, asynchronous pipeline execution (UUID-tracked jobs), model serialisation (joblib + HDF5), REST API design |
+| **Scientific Work** | Research foundation with literature references, formal abstract, systematic architecture description, hypothesis testing (which model performs best?), future work identification, experimental results |
+
+### Application-Ready Project Summary
+
+Use this in your SOP or module mapping form:
+
+> **Project Title**: Machine Learning-Based Financial Time-Series Forecasting and Strategy Evaluation System
+>
+> **Description**: Developed an end-to-end machine learning system for financial time-series prediction using historical cryptocurrency OHLCV data. The system performs feature engineering with technical indicators, trains and compares XGBoost, Random Forest, and LSTM models, and evaluates predictions using time-preserving validation and backtesting metrics. A Flask/Streamlit dashboard provides live prediction, interactive visualisation, model comparison, and feature-importance analysis. The project demonstrates applied machine learning, data preprocessing, model evaluation, software engineering, and dashboard deployment skills.
+>
+> **Methods**: XGBoost, Random Forest, LSTM (TensorFlow/Keras)
+> **Data**: Historical OHLCV crypto-market data via Yahoo Finance (`yfinance`)
+> **Features**: 11 technical indicators — SMA, WMA, MOM, Stochastic %K/%D, RSI, MACD, Williams %R, ADO, CCI
+> **Evaluation**: RMSE, Directional Accuracy, Sharpe Ratio, Maximum Drawdown, Win Rate
+> **Stack**: Python, pandas, scikit-learn, TensorFlow/Keras, XGBoost, Flask, Streamlit, Plotly
+> **Relevance**: Machine Learning, Deep Learning, Data Science, Data Engineering, Software Development, Research Methodology
+
+---
+
 ## References
 
 1. Chen, T., & Guestrin, C. (2016). *XGBoost: A Scalable Tree Boosting System*. Proceedings of the 22nd ACM SIGKDD.
@@ -479,4 +509,4 @@ This project intersects with several active research areas in German universitie
 
 ---
 
-<p align="center"><i>"In trading, data is the new alpha."</i></p>
+<p align="center"><i>Applied machine learning · Rigorous evaluation · Reproducible research</i></p>
