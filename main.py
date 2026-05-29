@@ -426,7 +426,8 @@ def run_pipeline(ticker='BTC-USD', start='2018-01-01', window_size=10, test_size
         'lstm_metrics': lstm_metrics,
         'backtest_df': back,
         'backtest_stats': backtest_stats,
-}
+        'chosen_label': chosen_label
+    }
 
 # -----------------------------
 # 8) CLI entry point with argparse
